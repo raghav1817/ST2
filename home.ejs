@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>ST To Do</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+    <link  href="../public/style.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+        <div class="container">
+        <h1>A Simple To-Do List</h1>
+        <form action="/addtask" method="post">
+            <input type="text" name=" newtask" id="newtask" placeholder="Add New Task"/>
+            <button name="todo" type="submit" formaction="/addtask"> Add Task</button><br>
+            <br><h2>Task Added</h2>
+                <h2> Added Task </h2>
+            <% for( var i = 0; i < task.length; i++){ %>
+            <li><input type="checkbox" name="check" value= "<%= task[i] %>" /> <%= task[i].todo %> </li>
+            <% } %></form>
+
+            <form action="/removetask" method="post">
+            <br><button name="remove" type="submit">Remove</button>
+            <h2>Task Completed</h2>
+            <% for(var i = 0; i < task.length; i++){ %>
+                <li><input type="checkbox" checked ><%= task[i] %> </li>
+                <% } %>
+        </form>
+    </div>
+</body>
+</html>
